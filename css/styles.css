@@ -13,43 +13,10 @@ html{
 body {
     overflow-x: hidden;
 }
+
 :root {
     --primary-color: azure;
-    --secondary-color: #4169E1;
-}
-
-/* Navbar Styling */
-
-#navbar {
-    display: flex;
-    position: fixed;
-    background-color: azure;
-    z-index: 10;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding:4px;
-}
-
-#navbar ul {
-    list-style: none;
-    display: flex;
-    padding: 15px;
-}
-
-#navbar a {
-    margin-right: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-#navbar #logo {
-    margin-left: 20px;
-}
-
-#navbar #logo:hover {
-    text-decoration: underline;
+    --secondary-color: #A4CEFF;
 }
 
 .section {
@@ -102,6 +69,47 @@ a {
     color: black;
 }
 
+/* Navbar Styling */
+
+.navbar {
+    display: flex;
+    position: fixed;
+    background-color: var(--primary-color);
+    z-index: 10;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:4px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0.5rem;
+}
+
+.navbar a {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    border-radius: 15%;
+}
+
+.navbar a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+}
+
+.navbar #logo {
+    margin-left: 1rem;
+}
+
+/* Home Section Styling */
+
 .home {
     background-image: url(../img/gradient-blue.webp);
 }
@@ -118,6 +126,11 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.home .content-container .chess-puzzle-container .chess-board {
+    height: 444px;
+    width: 400px;
 }
 
 .home .content-container .chess-puzzle-container h3 {
@@ -147,7 +160,10 @@ a {
     max-width: 60vw;
     max-height: 90vh;
     opacity: 0.9;
+    object-fit: cover;
 }
+
+/* About Me Styling */
 
 .aboutme {
     background-color: var(--primary-color);
@@ -158,7 +174,7 @@ a {
     position: relative;
     min-height: 300px;
     width: 60%;
-    margin: 30px
+    margin: 3rem;
 }
 
 .aboutme .image-container .aboutme-photo {
@@ -170,7 +186,6 @@ a {
     object-fit: cover;
     opacity: 0;
     border-radius: inherit;
-
 }
 
 .aboutme .image-container .aboutme-photo.aboutme-active {
@@ -201,12 +216,14 @@ a {
     font-size: large;
 }
 
+/* Education Section Styling */
+
 .education {
     background-color: var(--secondary-color);
 }
 
 .education header {
-    color: var(--primary-color);
+    color: black;
 }
 
 .education .edu-boxes {
@@ -230,6 +247,24 @@ a {
     border-radius: 20%;
 }
 
+.education .edu-box.slide-in-left {
+    animation: slideInLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .education .edu-box img {
     max-width: 200px;
     max-height: 50%;
@@ -238,6 +273,7 @@ a {
 
 }
 
+/* Employment Section Styling */
 
 .employment {
     background-color: var(--primary-color);
@@ -258,21 +294,13 @@ a {
     position: absolute;
     top:10%;
     left: 30%;
-    height: 80%;
+    height: var(--before-height);
     width: 8px;
     background: var(--secondary-color);
     z-index: 1;
-    animation: tl-line 4s linear 5 alternate;
+    transition: height 0.6s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
-@keyframes tl-line {
-    0%{
-        height: 0%;
-    }
-    100% {
-        height:80%;
-    }
-}
 
 .timeline .tl-item {
     margin:15px;
@@ -309,13 +337,9 @@ a {
     box-shadow: 0 5px 25px rgba(0,0,0,0.6);
     background: white;
     z-index: 5;
-    left:28%
+    left:28%;
+    object-fit: contain;
 }
-
-/* .timeline .tl-item .tl-logo:hover {
-    width: 100px;
-    height: 100px;
-} */
 
 .timeline .tl-item .tl-textbox {
     display: flex;
@@ -323,7 +347,7 @@ a {
     justify-content: stretch;
     align-items: center;
     margin:0.5rem;
-    color: var(--primary-color);
+    color: black;
 }
 
 
@@ -336,13 +360,12 @@ a {
     font-weight: 300;
 }
 
+/* Hobbies Section Styling */
+
 .hobbies {
     background-color: var(--secondary-color);
 }
 
-.hobbies header {
-    color: var(--primary-color)
-}
 
 .hobbies .hobbie-box {
     display: flex;
@@ -353,7 +376,25 @@ a {
     justify-content: flex-start;
     min-height: 400px;
     max-width: 300px;
-    margin-bottom: 2rem;
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.hobbies .hobbie-box.slide-in-right {
+    animation: slideInRight 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translatex(100%);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .hobbies .hobbie-box.card {
@@ -400,22 +441,23 @@ a {
     font-size: 20px;
 }
 
+/* Contact Me Section Styling */
 
 .contactme {
-    background-color: azure;
+    background-color: var(--primary-color);
     min-height: 750px;
-    padding-top: 0;
 }
 
 .contactme .contact-form {
     display: flex;
     flex-direction: column;
     background-color: white;
-
+    margin: 2rem;
 }
 
 .contactme .contact-form .input-field {
     display: flex;
+    max-width: 90%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -442,7 +484,22 @@ a {
     margin-bottom: 3px;
 }
 
+.contactme .contact-form .input-field.input-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 55%;
+}
 
+.contactme .contact-form .gmail-container label {
+    background-color: aliceblue;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+input[type="checkbox"] {
+    margin: 1rem;
+}
 input[type="submit"] {
     padding: 0.5rem 1.5rem;
     border-radius: 0.5rem;
@@ -451,18 +508,74 @@ input[type="submit"] {
     font-weight: 600;
 }
 
-
+/* Even more extra small devices (phones) */
+@media only screen and (max-width: 375px){
+    #navbar * {
+        padding: 0;
+        font-size: 9px;
+    }
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .navbar a{
+        font-size: 10px;
+    }
+    .navbar a:hover {
+        color: black;
+        background-color: var(--primary-color);
+        box-shadow: none;
+    }
+
     .timeline::before{
         left: 10%;
     }
     .timeline .tl-item .tl-logo{
         left:4%;
+        height: 50px;
+        width: 50px;
     }
     .timeline .tl-item .tl-card {
         opacity: 1;
     }
+    .timeline .tl-item .tl-card .tl-textbox {
+        font-size: 12px;
+    }
+
+    .education .edu-box {
+        min-height: 300px;
+        max-width: 250px;
+    }
+    .education .edu-box img {
+        max-width: 130px;
+        max-height: 30%;
+    }
+
+
+    .hobbies .hobbie-box {
+        max-width: 250px;
+        min-height: 300px;
+    }
+    .hobbies .hobbie-box .bg-layer {
+        top: 0;
+    }
+    .home .content-container .chess-puzzle-container .chess-board {
+        height: 344px;
+        width: 304px;
+    }
+    p {
+        font-size: 13px;
+    }
+    p.tl-desc {
+        font-size: 12px;
+    }
+
+    .edu-box p {
+        margin-bottom: 1rem;
+    }
+    .contactme .contact-form .input-field.input-submit {
+        max-width: 80%;
+    }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -475,6 +588,9 @@ input[type="submit"] {
     }
     .timeline .tl-item .tl-card {
         opacity: 1;
+    }
+    .hobbies .hobbie-box .bg-layer {
+        top: 0;
     }
 }
 
@@ -489,6 +605,9 @@ input[type="submit"] {
     .timeline .tl-item .tl-card {
         opacity: 1;
     }
+    .hobbies .hobbie-box .bg-layer {
+        top: 0;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -501,6 +620,18 @@ input[type="submit"] {
     }
     .timeline .tl-item .tl-card {
         opacity: 0;
+    }
+    .hobbies .hobbie-box .bg-layer {
+        top: calc(100% - 3px);
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .timeline::before{
+        left: 18%;
+    }
+    .timeline .tl-item .tl-logo{
+        left:15%;
     }
 }
 

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
       <title>Noam Reuveni</title>
-
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Noam Reuveni personal portfolio">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css", rel="stylesheet">
       <link href="css/styles.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/piazzai/nonacademicons/css/nonacademicons.min.css" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     </head>
 
 
     <body>
-      <nav id="navbar">
+      <nav id="navbar" class="navbar">
         <div class="Logo-container">
           <a href="#home" id="logo">Noam Reuveni</a>
         </div>
@@ -36,15 +38,15 @@
             <h3>Developer and Chess Lover</h3>
             <div class="chess-puzzle-container card">
               <h3>Enlighten Your Day with Wisdom</h3>
-              <iframe id="chessCaptcha" src="https://lichess.org/training/frame?theme=blue&bg=dark" style="width: 400px; height: 444px;" allowtransparency="true" frameborder="0"></iframe>
+              <iframe id="chessCaptcha" class="chess-board" src="https://lichess.org/training/frame?theme=blue&bg=dark" allowtransparency="true" frameborder="0" title="Chess Puzzle"></iframe>
             </div>
             <div class="profile-container">
               <img src="img/profile-without-background.webp" alt="profile-picture" id="profile-pic">
               <div class="icon-container">
-                <a href="https://twitter.com/Reuveni24" target="_blank"><i class="fab fa-twitter" style="color: #1DA1F2"></i></a>
-                <a href="https://www.facebook.com/noam.reuveni.3/" target="_blank"><i class="fab fa-facebook" style="color:#3b5998"></i></a>
-                <a href="https://www.linkedin.com/in/noam-reuveni-a1a614210/" target="_blank"><i class="fab fa-linkedin" style="color:#0077b5"></i></a>
-                <a href="https://lichess.org/@/Reuveni24" target="_blank"><i class="nai nai-lichess-square"></i></a>
+                <a href="https://twitter.com/Reuveni24" target="_blank" aria-label="My twitter profile"><i class="fab fa-twitter" style="color: #1DA1F2"></i></a>
+                <a href="https://www.facebook.com/noam.reuveni.3/" target="_blank" aria-label="My facebook profile"><i class="fab fa-facebook" style="color:#3b5998"></i></a>
+                <a href="https://www.linkedin.com/in/noam-reuveni-a1a614210/" target="_blank" aria-label="My linkedin profile"><i class="fab fa-linkedin" style="color:#0077b5"></i></a>
+                <a href="https://lichess.org/@/Reuveni24" target="_blank" aria-label="My lichess profile"><i class="nai nai-lichess-square"></i></a>
               </div>
             </div>
           </div>
@@ -174,14 +176,10 @@
         <section class="section contactme"id="contact">
           <div class="content-container">
           <header>Contact</header>
-          <form id="contact-form" class="contact-form card" method="post">
+          <form id="contact-form" class="contact-form card" method="post" onsubmit="return validate_submition()">
             <div class="input-field">
               <label for="">Your Name</label>
-              <input type="text" placeholder="John Doe" name="name" id="form-name">
-            </div>
-            <div class="input-field">
-              <label for="">Email</label>
-              <input type="text" placeholder="john.doe@gmail.com" name="name" id="form-name">
+              <input type="text" placeholder="John Doe" name="name" id="form-name" required>
             </div>
             <div class="input-field">
               <label for="">Subject</label>
@@ -189,9 +187,13 @@
             </div>
             <div class="input-field input-text">
               <label for="">Message</label>
-              <textarea type="text" placeholder="Type your message here" name="message" id="form-message" rows="10" cols="50"></textarea>
+              <textarea type="text" placeholder="Type your message here" name="message" id="form-message" rows="10" cols="50" required></textarea>
             </div>
             <div class="input-field input-submit">
+              <div class="gmail-container">
+              <input type="checkbox" name="gmail-checkbox" id="isGmail" value="gmail">
+              <label>Gmail</label>
+              </div>
               <input type="submit" name="submit" id="submit">
             </div>
           </form>
@@ -199,6 +201,8 @@
         </section>
       </main>
     </body>
+    <script src="js/hobbies.js"></script>
+    <script src="js/education.js"></script>
     <script src="js/employment.js"></script>
     <script src="js/aboutme.js"></script>
     <script src="js/form.js"></script>

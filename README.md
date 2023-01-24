@@ -3,9 +3,10 @@ How to Run: Double click on index.html
 
 Javascript:
 
-* for the employment section i wanted to have a cool way to showcase the cards while they are hidden from the screen.
+* about me: I wanted something to refresh a couple of photos of me so I added a cool effect to create a slideshow in the aboutme section.
 
-* for the about me section I wanted to have a better way to make kind of a slideshow with a couple of photos of me so the javascript sure helped
+* employment: I wanted to have a cool way to showcase the cards while they are hidden from the screen, so I created kind of a hover effect for showing the cards with the opacity field. Furthermore, I wanted the timline to scroll with the user so created a function to see where the user is in the section. This helped me to calculate the height of the timeline,
 
+* hobbies + education: I felt like these cool boxex were nice but were missing a smooth in effect so I created a slide in class to add an animation when the boxes enter the viewers screen.
 
-*for the form validation, I am comparing the input with a predefined regex pattern. and also dealing with a couple of edge cases. :TODO
+* for the form validation, first of all I added the required section to the required field to the html then inside the js function I made sure that the fields weren't filled with whitespaces then I checked if the user wanted to send through his gmail or open his mailto.
