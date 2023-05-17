@@ -1,3 +1,8 @@
+School project using vanilla JS.
+This repo has minimal commits as there was a requirement to keep this repo under 15mb.
+
+TODO: practice react with this project.
+
 How to Run: Double click on index.html
 
 
